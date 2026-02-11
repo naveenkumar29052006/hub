@@ -23,6 +23,7 @@ import { AlbyHubIcon } from "src/components/icons/AlbyHubIcon";
 import { AlbyHubLogo } from "src/components/icons/AlbyHubLogo";
 import { ProBadge } from "src/components/ProBadge";
 import SidebarHint from "src/components/SidebarHint";
+import { NotificationBellIcon } from "src/components/SpendingAppsNotification";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -130,6 +131,7 @@ export function AppSidebar() {
             <AlbyHubLogo className="w-32" />
           </Link>
           <div className="flex gap-3 items-center">
+            <NotificationBellIcon />
             <HealthIndicator />
           </div>
         </div>

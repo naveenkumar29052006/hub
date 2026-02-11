@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { AppSidebar } from "src/components/AppSidebar";
 import { Banner } from "src/components/Banner";
 import { CommandPalette } from "src/components/CommandPalette";
+import { SpendingAppsNotification } from "src/components/SpendingAppsNotification";
 import { SidebarInset, SidebarProvider } from "src/components/ui/sidebar";
 import {
   CommandPaletteProvider,
@@ -53,6 +54,7 @@ function AppLayoutInner() {
           </div>
         </SidebarProvider>
       </div>
+      <SpendingAppsNotification />
       <CommandPalette open={open} onOpenChange={setOpen} />
     </>
   );

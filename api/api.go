@@ -504,6 +504,13 @@ func (api *api) ListApps(limit uint64, offset uint64, filters ListAppsFilters, o
 		}
 	}
 
+	if filters.SpendingApps != nil && *filters.SpendingApps {
+		// filter apps with pay_invoice permission (spending permissions)
+		query = query.Joins("INNER JOIN app_permissions ON app_permissions.app_id = apps.id").
+			Where("app_permissions.scope = ?", constants.PAY_INVOICE_SCOPE).
+			Distinct()
+	}
+
 	if orderBy == "" {
 		orderBy = "last_used_at"
 	}
